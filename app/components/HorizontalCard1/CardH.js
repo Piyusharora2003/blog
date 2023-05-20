@@ -1,6 +1,4 @@
-import React from 'react'
-
-function CardH() {
+export default function CardH() {
 	const data = {
 		image :"https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 		imagealt:"alt text for image",
@@ -26,12 +24,11 @@ function CardH() {
 				<div className="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden lg:block">
 					{data.category}</div>
 			</div>
-			<h3 className="font-black text-gray-800 md:text-2xl text-xl">{data.title}</h3>
-			<p className="md:text-base text-gray-500 text-base">{data.description}</p>
+			<h3 className="font-black text-gray-800  text-xl">{data.title}</h3>
+			<p className=" text-gray-500 text-base">{data.description}</p>
 			
 		</div>
 	</div>
   )
 }
 
-export default CardH;
