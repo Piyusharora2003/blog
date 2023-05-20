@@ -19,12 +19,12 @@ function CardV() {
         },
     }
   return (
-    <div class="h-full bg-gray-100 flex justify-center items-center">
-  <div class="container flex justify-center">
-    <div class="max-w-sm py-4">
-      <div class="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
-        <img class="rounded-t-lg" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80" alt="" />
-        <div class="py-6 px-8 rounded-lg bg-white">
+    <div className="h-full bg-gray-100 flex justify-center items-center">
+  <div className="container flex justify-center">
+    <div className="max-w-sm py-4">
+      <div className="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
+        <img className="rounded-t-lg" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80" alt="" />
+        <div className="py-6 px-8 rounded-lg bg-white">
         <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime={post.datetime} className="text-gray-500">
                   {post.date}
@@ -36,8 +36,8 @@ function CardV() {
                   {post.category.title}
                 </a>
               </div>
-          <h1 class="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">I'm supper dog for you.</h1>
-          <p class="text-gray-700 tracking-wide">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, labore. Ea debitis beatae sequi deleniti.</p>
+          <h1 className="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">I'm supper dog for you.</h1>
+          <p className="text-gray-700 tracking-wide">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, labore. Ea debitis beatae sequi deleniti.</p>
           {/* Put here the creators info */}
           <div className="relative mt-4 flex items-center gap-x-4 w-full justify-between ">
             <div className='relative mt-4 flex items-center gap-x-4'>
@@ -60,8 +60,8 @@ function CardV() {
             </div>
               </div>
         </div>
-        <div class="absolute top-2 right-2 py-1 px-2 text-gray-800 bg-gray-300 rounded-lg">
-          <span class="text-md">Animals Dogs</span>
+        <div className="absolute top-2 right-2 py-1 px-2 text-gray-800 bg-gray-300 rounded-lg">
+          <span className="text-md">Animals Dogs</span>
         </div>
       </div>
     </div>

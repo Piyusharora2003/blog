@@ -1,20 +1,5 @@
-import CardH from "../HorizontalCard1/CardH"
 import CardV from "./CardV"
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 const products = [
     {
       id: 1,
