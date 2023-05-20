@@ -16,6 +16,8 @@ export default function NewArticle({ placeholder }){
 
 	return (
         <>
+         <div className='w-11/12 mx-auto'>
+        <header className='text-3xl my-4 font-bold'>Write Your Post here </header>
 		    <JoditEditor
 		    	ref={editor}
 		    	value={content}
@@ -24,6 +26,7 @@ export default function NewArticle({ placeholder }){
 		    	onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
 		    	onChange={newContent => {setContent(content)}}
                 />
+        </div>
         </>
 	);
 };
