@@ -1,21 +1,20 @@
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema({
-    publishtime:{
-        type:Date,
-        
-    },
+    // publishtime:{
+    //     type:Date,    
+    // },
     title:{
         type:String,
         required:[true,"Please enter the title"],
         trim:true,
         unique:true
     },
-    author:{
-        type: mongoose.Schema.ObjectId,
-        ref:"user",
-        // required:true,
-    },
+    // author:{
+    //     type: mongoose.Schema.ObjectId,
+    //     ref:"user",
+    //     // required:true,
+    // },
     category:{
         type:String,
         required:true,
@@ -35,28 +34,28 @@ const PostSchema = new mongoose.Schema({
     tags:[{
         type:String,
     }],
-    reviews:[{
-        user:{
-            type: mongoose.Schema.ObjectId,
-            ref: "user",
-            required: true,
-            unique:true
-        },
-        username:{
-            type: String,
-            required: true,
-        },
-        rating:{
-            type:Number,
-            require:true,
-            min:0,
-            max:5
-        },
-        description:{
-            type:String,
-        }            
-    }]
+    // reviews:[{
+    //     user:{
+    //         type: mongoose.Schema.ObjectId,
+    //         ref: "user",
+    //         required: true,
+    //         unique:true
+    //     },
+    //     username:{
+    //         type: String,
+    //         required: true,
+    //     },
+    //     rating:{
+    //         type:Number,
+    //         require:true,
+    //         min:0,
+    //         max:5
+    //     },
+    //     description:{
+    //         type:String,
+    //     }            
+    // }]
 })
 
-mongoose.models = {};
-module.exports = mongoose.model("post",PostSchema);
+
+module.exports = mongoose?.models?.Posts || mongoose.model("Posts",PostSchema);
