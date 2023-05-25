@@ -1,14 +1,13 @@
 import connectDb from '@/middleware/mongoose';
+import Post from '@/models/Post';
 import Posts from '@/models/Post';
 import mongoose from 'mongoose';
 import { NextResponse } from 'next/server';
  
 export async function GET(request) {
-  console.log("here");
   await connectDb();
-  console.log("connection state = ",mongoose.connection.readyState);
+  const res =(await Post.find());
   return NextResponse.json({
-    "by":"Piyush Arora",
-    "to":"Tell me whom it had it recieved"
+    response :res
   })
 }
