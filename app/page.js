@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <>
       <Nav/>
-      <CardHcollection LatestPost={finaldata} />
+      {/* <CardHcollection LatestPost={finaldata} /> */}
       <CardVcollection />
       <Footer/>
     </>
