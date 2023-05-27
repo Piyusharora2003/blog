@@ -3,6 +3,7 @@ import Dropdown from "@/components/Dropdown/Dropdown";
 import Tags from "@/components/Tags/Tags";
 import { categories } from "@/middleware/data";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import React, { useState, useRef, useMemo } from 'react';
 
 
@@ -20,6 +21,8 @@ export default function NewArticle(){
 	const [coverimg,setcoverimg] = useState("");
 	const [tag,addtag] = useState([]);
 	const [currtag,setcurrtagvalue] = useState("");
+	const [shortsummary,setshortsummary] = useState("");
+
  	const config = useMemo(()=>{
  			readonly: false; 				// all options from https://xdsoft.net/jodit/docs/,
  			placeholder : 'Start typings...';
@@ -59,19 +62,29 @@ export default function NewArticle(){
 		setcurrtagvalue("");
 	}
 
+
  	return (
          <>
+  			<Link className="absolute top-2  right-4" href={'/'}>
+				<svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.50} stroke="currentColor" className="w-6 h-6 font-bold">
+  					<path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+				</svg>
+			</Link>
           	<div className='w-11/12 mx-auto'>
 				<div className="flex justify-between">
-         			<header className='text-3xl my-4 font-bold border-l-8 pl-2 border-red-800 mb-4'>Write Your Post here </header>
+         			<header className='text-3xl my-4 font-bold border-l-8 pl-2 border-red-800 mb-4'>
+						Write Your Post here </header>
+						
 				</div>
 				<div className="mb-4">
       				<label className="block text-gray-800 text-xl font-bold mb-2" htmlFor="title">
-        				Title
+        				{/* <icon></icon> */}
+						Title
       				</label>
       				<input value={title} onChange={(e)=>{setTitle(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Enter the Title"/>
     			</div>
-				<div className="flex justify-between flex-col md:flex-row mx-3 ">
+
+				<div className="flex justify-between flex-col md:flex-row me-3 ">
 					<div className="w-30  text-xl font-bold mb-2  ">
 						<Dropdown   selected={selected} setSelected={setSelected} categories={categories}/>
 					</div>
@@ -96,10 +109,12 @@ export default function NewArticle(){
 				</div>
 
 				{/* <Tags tag={tag} addtag={addtag}/> */}
-				<div className=" w-max p-3">
+				<div className=" w-max p-3 ps-0">
+					<div className="block text-gray-800 text-xl font-bold mb-2">Meta Tags </div>
       				<input type="text"
       				className="font-bold mb-3 py-2 px-3 shadow appearance-none border rounded leading-tight focus:outline-none focus:shadow-outline me-3"
       				value={currtag}
+					placeholder="Enter meta-tag of content."
 					onChange={(e)=>{setcurrtagvalue(e.target.value)}}
 					/>
       				<button
@@ -111,6 +126,16 @@ export default function NewArticle(){
       				<div className="flex">{tag.map((elem,index)=>{
       				    return <div key={index} className="me-2 w-max p-2 border shadow">{elem}</div>
       				})}</div>
+    			</div>
+
+				<div className="mb-4">
+      				<label className="block text-gray-800 text-xl font-bold mb-2" htmlFor="shortsummary">
+						Short Summary (Max 150 char)
+      				</label>
+      				<input value={shortsummary} onChange={(e)=>{setshortsummary(e.target.value)}}
+						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+						id="shortsummary" type="text" placeholder="Wrap Your content"
+					/>
     			</div>
 
 

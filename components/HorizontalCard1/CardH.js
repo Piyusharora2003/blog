@@ -1,13 +1,15 @@
-export default function CardH() {
+export default function CardH(props) {
+	console.log(props);
 	const data = {
-		image :"https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-		imagealt:"alt text for image",
-		rating:4.9,
+		image : props.coverimg || "https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+		imagealt:props.category+ " blog ",
+		rating:props.rating,
 		reviewcount:72,
-		category:"Data Science",
-		title:"The Majestic and Wonderful Bahamas",
+		category:props.category,
+		title: props.title ||"The Majestic and Wonderful Bahamas",
 		description:"The best kept secret of The Bahamas is the country’s sheer size and diversity. With 16 major islands, The Bahamas is an unmatched destination blanshsdfsgdfbfd".slice(0,147) +"..."
 	}
+
   return (
 	<div className="relative flex flex-col lg:flex-row md:space-x-5 space-y-3 lg:space-y-0 rounded-xl shadow-lg p-3 max-w-xs lg:max-w-3xl mx-auto border border-white bg-white pb-1">
 		<div className="w-full lg:w-1/3 bg-white grid place-items-center">
@@ -31,4 +33,8 @@ export default function CardH() {
 	</div>
   )
 }
+
+// CardH.prototype = {
+	// Add props type
+// }
 

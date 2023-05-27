@@ -7,7 +7,8 @@ import { NextResponse } from 'next/server';
 export async function GET(request) {
   await connectDb();
   const res =(await Post.find());
+  // console.log(res);
   return NextResponse.json({
-    response :res
+    posts :[...res]
   })
 }
