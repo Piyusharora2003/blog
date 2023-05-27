@@ -4,23 +4,35 @@ import Nav from "@/components/Navbar/Nav";
 import CardVcollection from "@/components/VerticalCard1/CardVcollection";
 
 async function getlatestpost() {
- const res = await fetch(`http://localhost:3000/api/getlatestposts`);
- const data = (await res.json()).posts;
-//  console.log(data);
- return {
-  data
- };
+  try {
+    const res = await fetch(`http://localhost:3000/api/getlatestposts`,{
+      cache:"no-store"
+    });
+    const data = await (await res.json()).posts;
+    return {
+      data
+    }; 
+
+  } catch (error) {
+    return{
+      data: {
+        data:[]
+      }
+    }
+  }
 }
 
 export default async function Home() {
     const data = await getlatestpost();
-    // console.log("data is new one ");
-    // console.log(data.data);
-    const finaldata = await data.data;
+    const finaldata = data.data;
+    if(!data || !finaldata){
+      return <>hello</>
+    }
+    
   return (
     <>
       <Nav/>
-      {/* <CardHcollection LatestPost={finaldata} /> */}
+      <CardHcollection LatestPost={finaldata} />
       <CardVcollection />
       <Footer/>
     </>
