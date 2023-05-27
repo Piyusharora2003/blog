@@ -10,7 +10,7 @@ export default function Home() {
   const [LatestPost,editLatestPosts] = useState([]);
   useEffect(()=>{
     async function getlatestposts(){
-      const res = await fetch("/api/gethello").then((res) => res.json());
+      const res = await fetch("/api/getlatestposts").then((res) => res.json());
       editLatestPosts([...res.posts]);
     }
     getlatestposts();
@@ -23,4 +23,10 @@ export default function Home() {
       <Footer/>
     </>
   )
+}
+
+export function getServerSideProps() {
+  return {
+      props: {},
+  };
 }
