@@ -24,8 +24,8 @@ async function getlatestpost() {
 
 export default async function Home() {
     const data = await getlatestpost();
-    const finaldata = data.data;
-    if(!data || !finaldata){
+    const finaldata =await data.data;
+    if(!Array.isArray(data) || !Array.isArray(finaldata)){
       return <>hello</>
     }
     
