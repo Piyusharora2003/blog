@@ -1,5 +1,5 @@
 export default function CardH(props) {
-	console.log(props);
+	// console.log(props);
 	const data = {
 		image : props.coverimg || "https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 		imagealt:props.category+ " blog ",

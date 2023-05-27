@@ -9,6 +9,6 @@ export async function GET(request) {
   const res =(await Post.find());
   // console.log(res);
   return NextResponse.json({
-    posts :[...res]
+    posts : res
   })
 }
